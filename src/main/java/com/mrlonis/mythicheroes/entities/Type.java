@@ -11,18 +11,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.UUID;
 
 @Builder
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "AfkArena_Types")
+@Table(name = "MythicHeroes_Types")
 public class Type implements ProjectEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TypeId")
-    private Integer typeId;
+    private UUID typeId;
 
     @Column(name = "TypeName")
     private String typeName;

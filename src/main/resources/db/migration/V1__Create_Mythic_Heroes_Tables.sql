@@ -22,15 +22,11 @@ CREATE TABLE MythicHeroes_Heroes
 (
     HeroId UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     FactionId UUID NOT NULL ,
-    HeroRarity varchar(25) NOT NULL ,
-    HeroImageUrl varchar(200) ,
     HeroName varchar(50) NOT NULL ,
+    HeroRarity varchar(25) NOT NULL ,
     TypeId UUID NOT NULL ,
-    ClassId UUID NOT NULL ,
-    RoleId UUID NOT NULL ,
+    HeroImageUrl varchar(200) ,
     CONSTRAINT MythicHeroes_Heroes_UniqueHeroes UNIQUE (HeroId, HeroRarity, HeroName),
     CONSTRAINT MythicHeroes_Heroes_Faction_ForeignKey FOREIGN KEY (FactionId) REFERENCES MythicHeroes_Factions (FactionId),
-    CONSTRAINT MythicHeroes_Heroes_Type_ForeignKey FOREIGN KEY (TypeId) REFERENCES MythicHeroes_Types (TypeId),
-    CONSTRAINT MythicHeroes_Heroes_Class_ForeignKey FOREIGN KEY (ClassId) REFERENCES MythicHeroes_Classes (ClassId),
-    CONSTRAINT MythicHeroes_Heroes_Role_ForeignKey FOREIGN KEY (RoleId) REFERENCES MythicHeroes_Roles (RoleId)
+    CONSTRAINT MythicHeroes_Heroes_Type_ForeignKey FOREIGN KEY (TypeId) REFERENCES MythicHeroes_Types (TypeId)
 );

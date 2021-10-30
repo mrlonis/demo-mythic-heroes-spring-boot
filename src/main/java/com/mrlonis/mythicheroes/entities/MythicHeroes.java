@@ -14,21 +14,22 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.UUID;
 
 @Builder
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "AfkArena_Heroes")
+@Table(name = "MythicHeroes_Heroes")
 public class MythicHeroes implements ProjectEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "HeroId")
-    private Integer heroId;
+    private UUID heroId;
 
     @Column(name = "FactionId")
-    private Integer factionId;
+    private UUID factionId;
 
     @Column(name = "HeroRarity")
     private String heroRarity;
@@ -40,13 +41,7 @@ public class MythicHeroes implements ProjectEntity, Serializable {
     private String heroName;
 
     @Column(name = "TypeId")
-    private Integer typeId;
-
-    @Column(name = "ClassId")
-    private Integer classId;
-
-    @Column(name = "RoleId")
-    private Integer roleId;
+    private UUID typeId;
 
     @ManyToOne
     @JoinColumn(name = "FactionId", referencedColumnName = "FactionId", insertable = false, updatable = false, nullable = false)
@@ -56,11 +51,4 @@ public class MythicHeroes implements ProjectEntity, Serializable {
     @JoinColumn(name = "TypeId", referencedColumnName = "TypeId", insertable = false, updatable = false, nullable = false)
     private Type heroType;
 
-    @ManyToOne
-    @JoinColumn(name = "ClassId", referencedColumnName = "ClassId", insertable = false, updatable = false, nullable = false)
-    private Class heroClass;
-
-    @ManyToOne
-    @JoinColumn(name = "RoleId", referencedColumnName = "RoleId", insertable = false, updatable = false, nullable = false)
-    private Role heroRole;
 }
