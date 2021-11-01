@@ -28,17 +28,17 @@ public class MythicHeroes implements ProjectEntity, Serializable {
     @Column(name = "HeroId")
     private UUID heroId;
 
-    @Column(name = "FactionId")
-    private UUID factionId;
-
-    @Column(name = "HeroRarity")
-    private String heroRarity;
+    @Column(name = "HeroName")
+    private String heroName;
 
     @Column(name = "HeroImageUrl")
     private String heroImageUrl;
 
-    @Column(name = "HeroName")
-    private String heroName;
+    @Column(name = "FactionId")
+    private UUID factionId;
+
+    @Column(name = "RarityId")
+    private UUID rarityId;
 
     @Column(name = "TypeId")
     private UUID typeId;
@@ -46,6 +46,10 @@ public class MythicHeroes implements ProjectEntity, Serializable {
     @ManyToOne
     @JoinColumn(name = "FactionId", referencedColumnName = "FactionId", insertable = false, updatable = false, nullable = false)
     private Faction heroFaction;
+
+    @ManyToOne
+    @JoinColumn(name = "RarityId", referencedColumnName = "RarityId", insertable = false, updatable = false, nullable = false)
+    private Rarity heroRarity;
 
     @ManyToOne
     @JoinColumn(name = "TypeId", referencedColumnName = "TypeId", insertable = false, updatable = false, nullable = false)

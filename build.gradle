@@ -95,10 +95,14 @@ check {
 
 bootRun {
     systemProperties = System.properties as Map<String, ?>
+    dependsOn restartDocker
 }
 
 build {
-    dependsOn jacocoTestReport
+    dependsOn {
+        jacocoTestReport
+        restartDocker
+    }
 }
 
 repositories {
