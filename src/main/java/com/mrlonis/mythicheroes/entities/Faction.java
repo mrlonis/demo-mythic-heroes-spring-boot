@@ -3,6 +3,7 @@ package com.mrlonis.mythicheroes.entities;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.UUID;
 
 @Builder
@@ -19,15 +21,15 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "MythicHeroes_Factions")
-public class Faction implements ProjectEntity {
+public class Faction implements ProjectEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "FactionId")
-    private UUID factionId;
+    @Column(name = "id")
+    private UUID id;
 
-    @Column(name = "FactionName")
-    private String factionName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "FactionImageUrl")
-    private String factionImageUrl;
+    @Column(name = "imageUrl")
+    private String imageUrl;
 }

@@ -105,6 +105,12 @@ build {
     }
 }
 
+flyway {
+    url = 'jdbc:postgresql://localhost:5110/'
+    user = 'postgres'
+    password = '123456'
+}
+
 repositories {
     mavenCentral()
 }

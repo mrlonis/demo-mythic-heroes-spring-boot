@@ -3,6 +3,7 @@ package com.mrlonis.mythicheroes.entities;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
@@ -25,34 +26,34 @@ import java.util.UUID;
 public class MythicHeroes implements ProjectEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "HeroId")
-    private UUID heroId;
+    @Column(name = "id")
+    private UUID id;
 
-    @Column(name = "HeroName")
-    private String heroName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "HeroImageUrl")
-    private String heroImageUrl;
+    @Column(name = "imageUrl")
+    private String imageUrl;
 
-    @Column(name = "FactionId")
+    @Column(name = "factionId")
     private UUID factionId;
 
-    @Column(name = "RarityId")
+    @Column(name = "rarityId")
     private UUID rarityId;
 
-    @Column(name = "TypeId")
+    @Column(name = "typeId")
     private UUID typeId;
 
     @ManyToOne
-    @JoinColumn(name = "FactionId", referencedColumnName = "FactionId", insertable = false, updatable = false, nullable = false)
-    private Faction heroFaction;
+    @JoinColumn(name = "factionId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Faction faction;
 
     @ManyToOne
-    @JoinColumn(name = "RarityId", referencedColumnName = "RarityId", insertable = false, updatable = false, nullable = false)
-    private Rarity heroRarity;
+    @JoinColumn(name = "rarityId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Rarity rarity;
 
     @ManyToOne
-    @JoinColumn(name = "TypeId", referencedColumnName = "TypeId", insertable = false, updatable = false, nullable = false)
-    private Type heroType;
+    @JoinColumn(name = "typeId", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)
+    private Type type;
 
 }

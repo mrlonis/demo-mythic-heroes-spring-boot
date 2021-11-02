@@ -3,6 +3,7 @@ package com.mrlonis.mythicheroes.entities;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.UUID;
 
 @Builder
@@ -19,16 +21,16 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "MythicHeroes_Rarities")
-public class Rarity implements ProjectEntity {
+public class Rarity implements ProjectEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "RarityId")
-    private UUID rarityId;
+    @Column(name = "id")
+    private UUID id;
 
-    @Column(name = "RarityName")
-    private String rarityName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "RarityImageUrl")
-    private String rarityImageUrl;
+    @Column(name = "imageUrl")
+    private String imageUrl;
 }
 

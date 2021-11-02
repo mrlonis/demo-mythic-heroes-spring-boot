@@ -3,6 +3,7 @@ package com.mrlonis.mythicheroes.entities;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.UUID;
 
 @Builder
@@ -19,15 +21,15 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "MythicHeroes_Types")
-public class Type implements ProjectEntity {
+public class Type implements ProjectEntity, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "TypeId")
-    private UUID typeId;
+    @Column(name = "id")
+    private UUID id;
 
-    @Column(name = "TypeName")
-    private String typeName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "TypeImageUrl")
-    private String typeImageUrl;
+    @Column(name = "imageUrl")
+    private String imageUrl;
 }

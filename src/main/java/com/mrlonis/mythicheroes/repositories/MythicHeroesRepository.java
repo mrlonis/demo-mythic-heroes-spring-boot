@@ -15,5 +15,5 @@ import java.util.UUID;
 public interface MythicHeroesRepository extends PagingAndSortingRepository<MythicHeroes, UUID> {
     List<MythicHeroes> findAll();
 
-    List<MythicHeroes> findByHeroName(@Param("heroName") String heroName);
+    List<MythicHeroes> findByName(@Param("name") String name);
 }

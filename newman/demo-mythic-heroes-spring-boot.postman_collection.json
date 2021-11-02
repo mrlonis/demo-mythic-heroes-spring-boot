@@ -14,7 +14,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{hostname}}/api/mythicHeroes?page=0&size=37&sort=heroName",
+							"raw": "{{hostname}}/api/mythicHeroes?page=1&size=5&sort=name",
 							"host": [
 								"{{hostname}}"
 							],
@@ -25,15 +25,15 @@
 							"query": [
 								{
 									"key": "page",
-									"value": "0"
+									"value": "1"
 								},
 								{
 									"key": "size",
-									"value": "37"
+									"value": "5"
 								},
 								{
 									"key": "sort",
-									"value": "heroName"
+									"value": "name"
 								}
 							]
 						}
@@ -46,7 +46,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{hostname}}/api/mythicHeroes/search/findByHeroName?heroName=Lucifer",
+							"raw": "{{hostname}}/api/mythicHeroes/search/findByName?hname=Lucifer",
 							"host": [
 								"{{hostname}}"
 							],
@@ -54,11 +54,11 @@
 								"api",
 								"mythicHeroes",
 								"search",
-								"findByHeroName"
+								"findByName"
 							],
 							"query": [
 								{
-									"key": "heroName",
+									"key": "hname",
 									"value": "Lucifer"
 								}
 							]
