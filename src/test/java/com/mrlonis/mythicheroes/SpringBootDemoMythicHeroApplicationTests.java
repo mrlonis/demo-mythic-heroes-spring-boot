@@ -9,7 +9,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = SpringBootDemoMythicHeroesApplication.class)
 @ActiveProfiles("test")
-public class SpringBootDemoMythicHeroesApplicationTests {
+public class SpringBootDemoMythicHeroApplicationTests {
 
     @Test
     public void contextLoads() {
