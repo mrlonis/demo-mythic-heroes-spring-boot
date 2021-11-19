@@ -8,7 +8,7 @@ VALUES
     ('Luminarch & Shadowarch', 'https://www.game.guide/wp-content/uploads/2021/09/Luminarch_Shadowarch_Icon.png'),
     ('Shadowarch & Guardian', 'https://www.game.guide/wp-content/uploads/2021/10/Shadowarch_Guardian_Icon-150x150.png'),
     ('Guardian & Verdian', 'https://www.game.guide/wp-content/uploads/2021/09/Verdian_Guardian_Icon.png'),
-    ('Luminarch & Verdian', '');
+    ('Luminarch & Verdian', 'https://www.game.guide/wp-content/uploads/2021/10/Luminarch_Verdian_Icon.png');
 
 INSERT INTO MythicHeroes_Rarities
     (name, imageUrl)
