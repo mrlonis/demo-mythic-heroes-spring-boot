@@ -13,7 +13,7 @@ services:
       - POSTGRESQL_REPLICATION_PASSWORD=123456
       - POSTGRESQL_USERNAME=postgres
       - POSTGRESQL_PASSWORD=123456
-      - POSTGRESQL_DATABASE=fhir
+      - POSTGRESQL_DATABASE=mythicheroes
       - ALLOW_EMPTY_PASSWORD=yes
 
   postgresql-slave:
