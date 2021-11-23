@@ -2,7 +2,7 @@ version: "2"
 
 services:
   postgresql-master:
-    image: "docker.io/bitnami/postgresql:12.6.0"
+    image: "docker.io/bitnami/postgresql:14.1.0"
     ports:
       - "5110:5432"
     volumes:
@@ -17,7 +17,7 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
 
   postgresql-slave:
-    image: "docker.io/bitnami/postgresql:12.6.0"
+    image: "docker.io/bitnami/postgresql:14.1.0"
     ports:
       - "5111:5432"
     depends_on:
