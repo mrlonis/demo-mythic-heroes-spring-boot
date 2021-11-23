@@ -15,7 +15,7 @@ import java.util.UUID;
 public interface FactionRepository extends PagingAndSortingRepository<Faction, UUID> {
     List<Faction> findAll();
 
-    @RestResource(path = "", rel = "")
-    List<Faction> findByName(@Param("name") String name);
+    @RestResource(path = "findBy", rel = "findBy")
+    List<Faction> findByNameIgnoreCaseContains(@Param("name") String name);
 }
 
