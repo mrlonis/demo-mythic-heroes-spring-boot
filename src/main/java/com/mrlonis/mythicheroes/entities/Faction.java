@@ -31,4 +31,5 @@ public class Faction implements ProjectEntity, Serializable {
 
     @Column(name = "imageUrl")
     private String imageUrl;
+
 }
