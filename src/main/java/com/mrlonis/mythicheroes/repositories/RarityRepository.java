@@ -4,6 +4,7 @@ import com.mrlonis.mythicheroes.entities.Rarity;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
@@ -14,5 +15,6 @@ import java.util.UUID;
 public interface RarityRepository extends PagingAndSortingRepository<Rarity, UUID> {
     List<Rarity> findAll();
 
-    List<Rarity> findByName(@Param("name") String name);
+    @RestResource(path = "findBy", rel = "findBy")
+    List<Rarity> findByNameIgnoreCaseContains(@Param("name") String name);
 }
