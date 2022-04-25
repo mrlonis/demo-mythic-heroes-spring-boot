@@ -2,10 +2,10 @@ plugins {
     id "java"
     id "idea"
     id "jacoco"
-    id "org.springframework.boot" version "2.6.0"
+    id "org.springframework.boot" version "2.6.7"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
-    id "io.freefair.lombok" version "6.3.0"
-    id "org.flywaydb.flyway" version "8.0.5"
+    id "io.freefair.lombok" version "6.4.3"
+    id "org.flywaydb.flyway" version "8.5.9"
 }
 
 group = 'com.mrlonis.mythicheroes'
