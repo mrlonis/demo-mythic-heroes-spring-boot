@@ -31,5 +31,8 @@ public class Rarity implements ProjectEntity, Serializable {
 
     @Column(name = "imageUrl")
     private String imageUrl;
+
+    @Column(name = "imageSourceUrl")
+    private String imageSourceUrl;
 }
 

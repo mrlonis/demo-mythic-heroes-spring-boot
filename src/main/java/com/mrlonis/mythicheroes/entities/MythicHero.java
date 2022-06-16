@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,6 +33,9 @@ public class MythicHero implements ProjectEntity, Serializable {
 
     @Column(name = "imageUrl")
     private String imageUrl;
+
+    @Column(name = "imageSourceUrl")
+    private String imageSourceUrl;
 
     @Column(name = "factionId")
     private UUID factionId;

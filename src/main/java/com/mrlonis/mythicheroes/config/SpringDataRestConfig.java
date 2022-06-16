@@ -5,6 +5,7 @@ import com.mrlonis.mythicheroes.entities.MythicHero;
 import com.mrlonis.mythicheroes.entities.Rarity;
 import com.mrlonis.mythicheroes.entities.Type;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.core.mapping.RepositoryDetectionStrategy;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -17,6 +18,6 @@ public class SpringDataRestConfig implements RepositoryRestConfigurer {
         config.exposeIdsFor(Faction.class);
         config.exposeIdsFor(Rarity.class);
         config.exposeIdsFor(Type.class);
-
+        config.setRepositoryDetectionStrategy(RepositoryDetectionStrategy.RepositoryDetectionStrategies.ALL);
     }
 }

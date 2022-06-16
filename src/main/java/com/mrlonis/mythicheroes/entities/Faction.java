@@ -32,4 +32,7 @@ public class Faction implements ProjectEntity, Serializable {
     @Column(name = "imageUrl")
     private String imageUrl;
 
+    @Column(name = "imageSourceUrl")
+    private String imageSourceUrl;
+
 }

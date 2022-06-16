@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="PostgreSQL - @localhost" uuid="026e6901-a4ba-4bfb-a00a-025cfc648271">
+    <data-source source="LOCAL" name="PostgreSQL - @localhost" read-only="true" uuid="026e6901-a4ba-4bfb-a00a-025cfc648271">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5110/mythicheroes</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="SHOW_TEMPLATE_DATABASES" value="true" />
+        <property name="database.postgres.introspect.system.schemas" value="true" />
+      </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
