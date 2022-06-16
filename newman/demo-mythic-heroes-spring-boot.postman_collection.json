@@ -43,7 +43,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{hostname}}/api/mythicHero?page=0&size=0&sort=faction.name,asc",
+									"raw": "{{hostname}}/api/mythicHero",
 									"host": [
 										"{{hostname}}"
 									],
@@ -54,11 +54,13 @@
 									"query": [
 										{
 											"key": "page",
-											"value": "0"
+											"value": "0",
+											"disabled": true
 										},
 										{
 											"key": "size",
-											"value": "0"
+											"value": "0",
+											"disabled": true
 										},
 										{
 											"key": "sort",
@@ -77,7 +79,8 @@
 										},
 										{
 											"key": "sort",
-											"value": "faction.name,asc"
+											"value": "faction.name,asc",
+											"disabled": true
 										}
 									]
 								}
@@ -461,13 +464,23 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{hostname}}/apiv2/mythicHeroes",
+									"raw": "{{hostname}}/apiv2/mythicHeroes?page=0&size=5",
 									"host": [
 										"{{hostname}}"
 									],
 									"path": [
 										"apiv2",
 										"mythicHeroes"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
 									]
 								}
 							},
