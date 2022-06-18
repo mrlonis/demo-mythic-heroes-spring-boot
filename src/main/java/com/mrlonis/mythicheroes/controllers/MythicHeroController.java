@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/apiv2")
+@RequestMapping("/api/v2")
 public class MythicHeroController {
     private final MythicHeroRepository mythicHeroRepository;
 
@@ -20,7 +20,7 @@ public class MythicHeroController {
         this.mythicHeroRepository = mythicHeroRepository;
     }
 
-    @GetMapping("/mythicHeroes")
+    @GetMapping("/mythicHero")
     Page<MythicHero> getAll(@PageableDefault(page = 0, size = 100) Pageable page) {
         System.out.println("Hello?");
         return this.mythicHeroRepository.findAll(page);
