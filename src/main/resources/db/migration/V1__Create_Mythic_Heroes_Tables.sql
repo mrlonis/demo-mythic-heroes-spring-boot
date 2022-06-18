@@ -5,8 +5,8 @@ CREATE TABLE MythicHeroes_Factions
     id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name           varchar(50)  NOT NULL,
     imageUrl       varchar(200) NOT NULL,
-    imageSourceUrl varchar(200) NOT NULL,
-    CONSTRAINT MythicHeroes_Factions_Unique UNIQUE (id, name, imageUrl, imageSourceUrl)
+    imageSourceUrl varchar(200),
+    CONSTRAINT MythicHeroes_Factions_Unique UNIQUE (id, name, imageUrl)
 );
 
 CREATE TABLE MythicHeroes_Rarities
