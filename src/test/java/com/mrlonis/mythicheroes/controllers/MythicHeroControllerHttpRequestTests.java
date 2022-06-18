@@ -29,7 +29,7 @@ public class MythicHeroControllerHttpRequestTests {
         };
 
         ResponseEntity<String> result = this.restTemplate.exchange(
-                "http://localhost:" + port + "/api/mythicHero", HttpMethod.GET, null, String.class);
+                "http://localhost:" + port + "/api/v2/mythicHero", HttpMethod.GET, null, String.class);
         System.out.println(result);
         String body = result.getBody();
         assertNotNull(body);
