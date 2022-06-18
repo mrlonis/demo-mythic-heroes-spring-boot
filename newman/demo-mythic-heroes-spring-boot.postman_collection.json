@@ -338,138 +338,17 @@
 					"item": [
 						{
 							"name": "findAll",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Response Status Code is 200\", function(){\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Content-Type is application/pdf\", function () {\r",
-											"    pm.response.to.have.header(\"Content-Type\");\r",
-											"    \r",
-											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
-											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response Body have default page size number of heroes\", function () {\r",
-											"    const responseJson = pm.response.json();\r",
-											"    pm.expect(responseJson._embedded.data.length).to.eql(20);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{hostname}}/api/mythicHero?page=0&size=0&sort=faction.name,asc",
+									"raw": "{{hostname}}/api/v2/mythicHeroes?page=0&size=5",
 									"host": [
 										"{{hostname}}"
 									],
 									"path": [
 										"api",
-										"mythicHero"
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "0"
-										},
-										{
-											"key": "size",
-											"value": "0"
-										},
-										{
-											"key": "sort",
-											"value": "name,desc",
-											"disabled": true
-										},
-										{
-											"key": "name",
-											"value": "Lucifer",
-											"disabled": true
-										},
-										{
-											"key": "sort",
-											"value": "name,asc",
-											"disabled": true
-										},
-										{
-											"key": "sort",
-											"value": "faction.name,asc"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "findBy",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{hostname}}/api/mythicHero/search/findBy?name=&factionName=&rarityName=&typeName=&page=0&size=100&sort=name,asc",
-									"host": [
-										"{{hostname}}"
-									],
-									"path": [
-										"api",
-										"mythicHero",
-										"search",
-										"findBy"
-									],
-									"query": [
-										{
-											"key": "name",
-											"value": ""
-										},
-										{
-											"key": "factionName",
-											"value": ""
-										},
-										{
-											"key": "rarityName",
-											"value": ""
-										},
-										{
-											"key": "typeName",
-											"value": ""
-										},
-										{
-											"key": "page",
-											"value": "0"
-										},
-										{
-											"key": "size",
-											"value": "100"
-										},
-										{
-											"key": "sort",
-											"value": "name,asc"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "test",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{hostname}}/apiv2/mythicHeroes?page=0&size=5",
-									"host": [
-										"{{hostname}}"
-									],
-									"path": [
-										"apiv2",
+										"v2",
 										"mythicHeroes"
 									],
 									"query": [
