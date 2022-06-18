@@ -18,7 +18,7 @@ public class WebConfiguration extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/api/images/**").addResourceLocations("classpath:/images/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
 
-        registry.addResourceHandler("/apiv2/images/**").addResourceLocations("classpath:/images/")
+        registry.addResourceHandler("/api/v2/images/**").addResourceLocations("classpath:/images/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
     }
 
