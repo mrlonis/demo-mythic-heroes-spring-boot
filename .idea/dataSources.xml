@@ -30,5 +30,23 @@
       <jdbc-url>jdbc:postgresql://localhost:5110/mythicheroes</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="com.mrlonis.mythicheroes.demo-mythic-heroes-spring-boot.test/Hibernate" uuid="b69f9483-27c7-4996-914b-6a2b9e4dc8b3">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/mythicheroes</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="com.mrlonis.mythicheroes.demo-mythic-heroes-spring-boot.main/Hibernate" uuid="dfd22756-fb83-46d0-8465-49b7e92ebc68">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/mythicheroes</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

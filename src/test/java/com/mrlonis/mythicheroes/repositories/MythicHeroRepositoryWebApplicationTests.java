@@ -1,4 +1,4 @@
-package com.mrlonis.mythicheroes.controllers;
+package com.mrlonis.mythicheroes.repositories;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +20,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
-public class MythicHeroControllerWebApplicationTests {
+public class MythicHeroRepositoryWebApplicationTests {
     @Test
     public void shouldReturnAllCharacters(@Autowired MockMvc mockMvc) throws Exception {
-        mockMvc.perform(get("/api/v2/mythicHero")).andDo(print()).andExpect(status().isOk())
+        mockMvc.perform(get("/api/mythicHero")).andDo(print()).andExpect(status().isOk())
                .andExpect(content().string(containsString("content")));
     }
 
     @Test
     public void shouldReturnAllCharacters_v2(@Autowired MockMvc mockMvc) throws Exception {
-        ResultActions result = mockMvc.perform(get("/api/v2/mythicHero"));
+        ResultActions result = mockMvc.perform(get("/api/mythicHero"));
         MvcResult result_v2 = result.andReturn();
         assertEquals(200, result_v2.getResponse().getStatus());
         String json = result_v2.getResponse().getContentAsString();
