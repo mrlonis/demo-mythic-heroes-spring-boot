@@ -1,24 +1,16 @@
 INSERT INTO MythicHeroes_Factions
-    ( name, imageUrl, imageSourceUrl )
+    ( name, imageUrl, imagesourceurl )
 VALUES
-    ( 'Luminarch & Shadowarch', '',
-      'https://static.wikia.nocookie.net/mythic-heroes/images/7/7a/LuminarchShadowarch.png/revision/latest?cb=20211112165529' ),
-    ( 'Luminarch & Verdian', '', '' ),
-    ( 'Luminarch & Guardian', '', '' ),
-    ( 'Shadowarch & Verdian', '',
-      'https://static.wikia.nocookie.net/mythic-heroes/images/e/ec/ShadowarchVerdian.png/revision/latest?cb=20211229163412' ),
-    ( 'Shadowarch & Guardian', '',
-      'https://static.wikia.nocookie.net/mythic-heroes/images/b/b6/ShadowarchGuardian.png/revision/latest?cb=20211204184241' ),
-    ( 'Guardian & Verdian', '',
-      'https://static.wikia.nocookie.net/mythic-heroes/images/f/ff/GuardianVerdian.png/revision/latest?cb=20211205162654' ),
-    ( 'Luminarch', '',
-      'https://static.wikia.nocookie.net/mythic-heroes/images/a/a2/Luminarch.png/revision/latest?cb=20210728223148' ),
-    ( 'Shadowarch', '',
-      'https://static.wikia.nocookie.net/mythic-heroes/images/8/8d/Shadowarch.png/revision/latest?cb=20210728223058' ),
-    ( 'Guardian', '',
-      'https://static.wikia.nocookie.net/mythic-heroes/images/f/fd/Guardian.png/revision/latest?cb=20210728223230' ),
-    ( 'Verdian', '',
-      'https://static.wikia.nocookie.net/mythic-heroes/images/7/71/Verdian.png/revision/latest?cb=20210728223318' );
+    ( 'Luminarch & Shadowarch', 'factions/Luminarch_Shadowarch.png', '' ),
+    ( 'Luminarch & Verdian', 'factions/Luminarch_Verdian.png', '' ),
+    ( 'Luminarch & Guardian', 'factions/Luminarch_Guardian.png', '' ),
+    ( 'Shadowarch & Verdian', 'factions/Shadowarch_Verdian.png', '' ),
+    ( 'Shadowarch & Guardian', 'factions/Shadowarch_Guardian.png', '' ),
+    ( 'Guardian & Verdian', 'factions/Guardian_Verdian.png', '' ),
+    ( 'Luminarch', 'factions/Luminarch.png', '' ),
+    ( 'Shadowarch', 'factions/Shadowarch.png', '' ),
+    ( 'Guardian', 'factions/Guardian.png', '' ),
+    ( 'Verdian', 'factions/Verdian.png', '' );
 
 INSERT INTO MythicHeroes_Rarities
     ( name, imageUrl, imageSourceUrl )
