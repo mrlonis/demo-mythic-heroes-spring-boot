@@ -1,3 +1,5 @@
+import org.apache.tools.ant.taskdefs.condition.Os;
+
 plugins {
     id "java"
     id "idea"
@@ -28,9 +30,12 @@ def filesToExcludeFromCoverage = [""]
 task restartDocker {
     doLast {
         exec {
-            //commandLine 'sh', './scripts/restartDocker.sh'
-            workingDir = file('./')
-            commandLine = ['cmd', '/C', 'docker compose up -d']
+            if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+                workingDir = file('./')
+                commandLine = ['cmd', '/C', 'docker compose up -d']
+            } else {
+                commandLine = ['docker', 'compose', 'up', '-d']
+            }
         }
     }
 }
@@ -123,7 +128,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation "org.springframework.boot:spring-boot-starter-web"
 
+    implementation 'org.apache.ant:ant:1.10.12'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 
     runtimeOnly 'org.postgresql:postgresql'
 
