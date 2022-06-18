@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
-public class MythicHeroesControllerHttpRequestTest {
+public class MythicHeroControllerHttpRequestTests {
 
     @LocalServerPort
     private int port;
