@@ -23,7 +23,7 @@
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Content-Type is application/pdf\", function () {\r",
+											"pm.test(\"Content-Type is application/hal+json\", function () {\r",
 											"    pm.response.to.have.header(\"Content-Type\");\r",
 											"    \r",
 											"    var contentType = postman.getResponseHeader(\"Content-Type\");\r",
@@ -89,11 +89,36 @@
 						},
 						{
 							"name": "findBy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/hal+json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");",
+											"});",
+											"",
+											"pm.test(\"Response Body have default page size number of heroes\", function () {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson._embedded.data.length).to.eql(1);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{hostname}}/api/mythicHero/search/findBy?name=&factionName=&rarityName=&typeName=&page=0&size=100&sort=name,asc",
+									"raw": "{{hostname}}/api/mythicHero/search/findBy?name=Lucifer&factionName=Luminarch&rarityName=UR&typeName=Fighter&page=0&size=100&sort=name,asc",
 									"host": [
 										"{{hostname}}"
 									],
@@ -106,19 +131,19 @@
 									"query": [
 										{
 											"key": "name",
-											"value": ""
+											"value": "Lucifer"
 										},
 										{
 											"key": "factionName",
-											"value": ""
+											"value": "Luminarch"
 										},
 										{
 											"key": "rarityName",
-											"value": ""
+											"value": "UR"
 										},
 										{
 											"key": "typeName",
-											"value": ""
+											"value": "Fighter"
 										},
 										{
 											"key": "page",
@@ -144,6 +169,31 @@
 					"item": [
 						{
 							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/hal+json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");",
+											"});",
+											"",
+											"pm.test(\"Response Body have default page size number of heroes\", function () {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson._embedded.data.length).to.eql(10);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -175,12 +225,37 @@
 							"response": []
 						},
 						{
-							"name": "findByName",
+							"name": "findBy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/hal+json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");",
+											"});",
+											"",
+											"pm.test(\"Response Body have default page size number of heroes\", function () {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson._embedded.data.length).to.eql(4);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{hostname}}/api/faction/search/findByName?name=Luminarch",
+									"raw": "{{hostname}}/api/faction/search/findBy?name=Luminarch",
 									"host": [
 										"{{hostname}}"
 									],
@@ -188,7 +263,7 @@
 										"api",
 										"faction",
 										"search",
-										"findByName"
+										"findBy"
 									],
 									"query": [
 										{
@@ -207,6 +282,31 @@
 					"item": [
 						{
 							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/hal+json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");",
+											"});",
+											"",
+											"pm.test(\"Response Body have default page size number of heroes\", function () {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson._embedded.data.length).to.eql(3);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -238,12 +338,37 @@
 							"response": []
 						},
 						{
-							"name": "findByName",
+							"name": "findBy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/hal+json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");",
+											"});",
+											"",
+											"pm.test(\"Response Body have default page size number of heroes\", function () {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson._embedded.data.length).to.eql(1);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{hostname}}/api/rarity/search/findByName?name=UR",
+									"raw": "{{hostname}}/api/rarity/search/findBy?name=UR",
 									"host": [
 										"{{hostname}}"
 									],
@@ -251,7 +376,7 @@
 										"api",
 										"rarity",
 										"search",
-										"findByName"
+										"findBy"
 									],
 									"query": [
 										{
@@ -270,6 +395,31 @@
 					"item": [
 						{
 							"name": "findAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/hal+json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");",
+											"});",
+											"",
+											"pm.test(\"Response Body have default page size number of heroes\", function () {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson._embedded.data.length).to.eql(4);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -301,12 +451,37 @@
 							"response": []
 						},
 						{
-							"name": "findByName",
+							"name": "findBy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/hal+json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/hal+json\");",
+											"});",
+											"",
+											"pm.test(\"Response Body have default page size number of heroes\", function () {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson._embedded.data.length).to.eql(1);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{hostname}}/api/type/search/findByName?name=Fighter",
+									"raw": "{{hostname}}/api/type/search/findBy?name=Fighter",
 									"host": [
 										"{{hostname}}"
 									],
@@ -314,7 +489,7 @@
 										"api",
 										"type",
 										"search",
-										"findByName"
+										"findBy"
 									],
 									"query": [
 										{
@@ -338,6 +513,31 @@
 					"item": [
 						{
 							"name": "Get Mythic Hero - Page Params",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Response Body have default page size number of heroes\", function () {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson.content.length).to.eql(5);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -359,11 +559,6 @@
 										{
 											"key": "size",
 											"value": "5"
-										},
-										{
-											"key": "name",
-											"value": "Lucifer",
-											"disabled": true
 										}
 									]
 								}
@@ -372,6 +567,31 @@
 						},
 						{
 							"name": "Get Mythic Hero - Hero Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Response Body have default page size number of heroes\", function () {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson.content.length).to.eql(1);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -402,6 +622,76 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Get Mythic Hero - Hero Name, Faction Name, Rarity Name, and Type Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is application/json\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"application/json\");",
+											"});",
+											"",
+											"pm.test(\"Response Body have default page size number of heroes\", function () {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson.content.length).to.eql(1);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/api/v2/mythicHero?page=0&size=5&name=Lucifer&faction.name=Luminarch&rarity.name=UR&type.name=Fighter",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"mythicHero"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "name",
+											"value": "Lucifer"
+										},
+										{
+											"key": "faction.name",
+											"value": "Luminarch"
+										},
+										{
+											"key": "rarity.name",
+											"value": "UR"
+										},
+										{
+											"key": "type.name",
+											"value": "Fighter"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
@@ -415,9 +705,48 @@
 					"item": [
 						{
 							"name": "Get Faction Image",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is image/png\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"image/png\");",
+											"});",
+											"",
+											"pm.test(\"Content-Length is 136992\", function () {",
+											"    pm.response.to.have.header(\"Content-Length\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Length\");",
+											"    pm.expect(contentType).to.be.eql(\"136992\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{hostname}}/api/images/:type/:fimename",
 									"host": [
@@ -449,17 +778,45 @@
 					"name": "apiv2",
 					"item": [
 						{
-							"name": "Get Faction Image Copy",
+							"name": "Get Faction Image",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Status Code is 200\", function(){",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Content-Type is image/png\", function () {",
+											"    pm.response.to.have.header(\"Content-Type\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Type\");",
+											"    pm.expect(contentType).to.be.eql(\"image/png\");",
+											"});",
+											"",
+											"pm.test(\"Content-Length is 136992\", function () {",
+											"    pm.response.to.have.header(\"Content-Length\");",
+											"    ",
+											"    var contentType = postman.getResponseHeader(\"Content-Length\");",
+											"    pm.expect(contentType).to.be.eql(\"136992\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{hostname}}/apiv2/images/:type/:fimename",
+									"raw": "{{hostname}}/api/v2/images/:type/:fimename",
 									"host": [
 										"{{hostname}}"
 									],
 									"path": [
-										"apiv2",
+										"api",
+										"v2",
 										"images",
 										":type",
 										":fimename"
@@ -484,6 +841,19 @@
 		},
 		{
 			"name": "List API Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response Status Code is 200\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
