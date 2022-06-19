@@ -16,31 +16,19 @@ import java.util.UUID;
 public interface MythicHeroRepository extends PagingAndSortingRepository<MythicHero, UUID> {
     Page<MythicHero> findAll(Pageable pageable);
 
-    @RestResource(path = "findByName", rel = "findByName")
-    Page<MythicHero> findByNameIgnoreCaseContains(
-            @Param("name") String name,
-            Pageable pageable);
+    Page<MythicHero> findByNameIgnoreCaseContains(String name, Pageable pageable);
 
-    @RestResource(path = "findByFactionName", rel = "findByFactionName")
-    Page<MythicHero> findByFaction_NameIgnoreCaseContains(
-            @Param("faction.name") String factionName,
-            Pageable pageable);
+    Page<MythicHero> findByFaction_NameIgnoreCaseContains(String factionName, Pageable pageable);
 
-    @RestResource(path = "findByRarityName", rel = "findByRarityName")
-    Page<MythicHero> findByRarity_NameIgnoreCaseContains(
-            @Param("rarity.name") String rarityName,
-            Pageable pageable);
+    Page<MythicHero> findByRarity_NameIgnoreCaseContains(String rarityName, Pageable pageable);
 
-    @RestResource(path = "findByTypeName", rel = "findByTypeName")
-    Page<MythicHero> findByType_NameIgnoreCaseContains(
-            @Param("type.name") String typeName,
-            Pageable pageable);
+    Page<MythicHero> findByType_NameIgnoreCaseContains(String typeName, Pageable pageable);
 
-    @RestResource(path = "findByNameFactionRarityAndType", rel = "findByNameFactionRarityAndType")
+    @RestResource(path = "findBy", rel = "findBy")
     Page<MythicHero> findByNameIgnoreCaseContainsAndFaction_NameIgnoreCaseContainsAndRarity_NameIgnoreCaseContainsAndType_NameIgnoreCaseContains(
             @Param("name") String name,
-            @Param("faction.name") String factionName,
-            @Param("rarity.name") String rarityName,
-            @Param("type.name") String typeName,
+            @Param("factionName") String factionName,
+            @Param("rarityName") String rarityName,
+            @Param("typeName") String typeName,
             Pageable pageable);
 }
