@@ -11,10 +11,8 @@ import java.util.List;
 import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "rarity", exported = false)
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200"})
 public interface RarityRepository extends PagingAndSortingRepository<Rarity, UUID> {
-    List<Rarity> findAll();
-
     @RestResource(path = "findBy", rel = "findBy")
     List<Rarity> findByNameIgnoreCaseContains(@Param("name") String name);
 }
