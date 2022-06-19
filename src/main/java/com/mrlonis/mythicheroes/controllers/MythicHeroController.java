@@ -31,7 +31,8 @@ public class MythicHeroController {
             if (factionName != null) {
                 if (rarityName != null) {
                     if (typeName != null) {
-
+                        return this.mythicHeroRepository.findByNameIgnoreCaseContainsAndFaction_NameIgnoreCaseContainsAndRarity_NameIgnoreCaseContainsAndType_NameIgnoreCaseContains(
+                                name, factionName, rarityName, typeName, page);
                     }
                 }
                 if (typeName != null) {
