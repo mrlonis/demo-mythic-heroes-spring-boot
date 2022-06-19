@@ -12,8 +12,8 @@ plugins {
 
 group = 'com.mrlonis.mythicheroes'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 tasks.withType(JavaCompile) {
     options.warnings = true
@@ -22,7 +22,7 @@ tasks.withType(JavaCompile) {
 }
 
 jacoco {
-    toolVersion = "0.8.7"
+    toolVersion = "0.8.8"
 }
 
 def filesToExcludeFromCoverage = [""]
@@ -44,9 +44,6 @@ test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
     dependsOn restartDocker
-    testLogging {
-        showStandardStreams = true
-    }
 }
 
 jacocoTestReport {
@@ -125,15 +122,14 @@ repositories {
 
 dependencies {
     implementation 'commons-io:commons-io:2.11.0'
+    implementation 'org.apache.ant:ant:1.10.12'
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation "org.springframework.boot:spring-boot-starter-web"
 
-    implementation 'org.apache.ant:ant:1.10.12'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
 
     runtimeOnly 'org.postgresql:postgresql'
 
