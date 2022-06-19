@@ -27,49 +27,12 @@ public class MythicHeroController {
                          @RequestParam(required = false, name = "rarity.name") String rarityName,
                          @RequestParam(required = false, name = "type.name") String typeName,
                          @PageableDefault(page = 0, size = 100) Pageable page) {
-        if (name != null) {
-            if (factionName != null) {
-                if (rarityName != null) {
-                    if (typeName != null) {
-                        return this.mythicHeroRepository.findByNameIgnoreCaseContainsAndFaction_NameIgnoreCaseContainsAndRarity_NameIgnoreCaseContainsAndType_NameIgnoreCaseContains(
-                                name, factionName, rarityName, typeName, page);
-                    }
-                }
-                if (typeName != null) {
-
-                }
-            }
-            if (rarityName != null) {
-                if (typeName != null) {
-
-                }
-            }
-            if (typeName != null) {
-
-            }
-            return this.mythicHeroRepository.findByNameIgnoreCaseContains(name, page);
-        }
-        if (factionName != null) {
-            if (rarityName != null) {
-                if (typeName != null) {
-
-                }
-            }
-            if (typeName != null) {
-
-            }
-            return this.mythicHeroRepository.findByFaction_NameIgnoreCaseContains(factionName, page);
-        }
-        if (rarityName != null) {
-            if (typeName != null) {
-
-            }
-            return this.mythicHeroRepository.findByRarity_NameIgnoreCaseContains(rarityName, page);
-        }
-        if (typeName != null) {
-            return this.mythicHeroRepository.findByType_NameIgnoreCaseContains(typeName, page);
+        if (name == null && factionName == null && rarityName == null && typeName == null) {
+            return this.mythicHeroRepository.findAll(page);
         }
 
-        return this.mythicHeroRepository.findAll(page);
+        return this.mythicHeroRepository.findByNameIgnoreCaseContainsAndFaction_NameIgnoreCaseContainsAndRarity_NameIgnoreCaseContainsAndType_NameIgnoreCaseContains(
+                name != null ? name : "", factionName != null ? factionName : "", rarityName != null ? rarityName : "",
+                typeName != null ? typeName : "", page);
     }
 }
