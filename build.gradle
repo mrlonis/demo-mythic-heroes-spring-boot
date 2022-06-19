@@ -1,4 +1,4 @@
-import org.apache.tools.ant.taskdefs.condition.Os;
+import org.apache.tools.ant.taskdefs.condition.Os
 
 plugins {
     id "java"
@@ -44,6 +44,9 @@ test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
     dependsOn restartDocker
+    testLogging {
+        showStandardStreams = true
+    }
 }
 
 jacocoTestReport {
@@ -58,7 +61,7 @@ jacocoTestReport {
     afterEvaluate {
         classDirectories.from = files(classDirectories.files.collect {
             fileTree(dir: it,
-                     exclude: filesToExcludeFromCoverage)
+                    exclude: filesToExcludeFromCoverage)
         })
     }
 }
@@ -67,7 +70,7 @@ jacocoTestCoverageVerification {
     afterEvaluate {
         classDirectories.from = files(classDirectories.files.collect {
             fileTree(dir: it,
-                     exclude: filesToExcludeFromCoverage)
+                    exclude: filesToExcludeFromCoverage)
         })
     }
 
