@@ -14,16 +14,6 @@ import java.util.UUID;
 @RepositoryRestResource(collectionResourceRel = "data", itemResourceRel = "item", path = "mythicHero")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public interface MythicHeroRepository extends PagingAndSortingRepository<MythicHero, UUID> {
-    Page<MythicHero> findAll(Pageable pageable);
-
-    Page<MythicHero> findByNameIgnoreCaseContains(String name, Pageable pageable);
-
-    Page<MythicHero> findByFaction_NameIgnoreCaseContains(String factionName, Pageable pageable);
-
-    Page<MythicHero> findByRarity_NameIgnoreCaseContains(String rarityName, Pageable pageable);
-
-    Page<MythicHero> findByType_NameIgnoreCaseContains(String typeName, Pageable pageable);
-
     @RestResource(path = "findBy", rel = "findBy")
     Page<MythicHero> findByNameIgnoreCaseContainsAndFaction_NameIgnoreCaseContainsAndRarity_NameIgnoreCaseContainsAndType_NameIgnoreCaseContains(
             @Param("name") String name,
@@ -31,4 +21,5 @@ public interface MythicHeroRepository extends PagingAndSortingRepository<MythicH
             @Param("rarityName") String rarityName,
             @Param("typeName") String typeName,
             Pageable pageable);
+
 }
