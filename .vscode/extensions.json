@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "streetsidesoftware.code-spell-checker",
+        "vscjava.vscode-java-debug",
+        "ms-azuretools.vscode-docker",
+        "visualstudioexptteam.vscodeintellicode",
+        "redhat.java",
+        "vscjava.vscode-maven",
+        "esbenp.prettier-vscode",
+        "vscjava.vscode-java-dependency",
+        "vscjava.vscode-java-test"
+    ]
+}
