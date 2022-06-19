@@ -1,6 +1,5 @@
 package com.mrlonis.mythicheroes.repositories;
 
-import com.mrlonis.mythicheroes.entities.MythicHero;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -15,7 +14,7 @@ public class MythicHeroRepositoryH2Tests {
     MythicHeroRepository mythicHeroRepository;
 
     @Test
-    void testFindAll() {
+    void contextLoads() {
         assertNotNull(mythicHeroRepository);
     }
 }
