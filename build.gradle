@@ -6,8 +6,8 @@ plugins {
     id "jacoco"
     id "org.springframework.boot" version "2.7.0"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
-    id "io.freefair.lombok" version "6.4.3.1"
-    id "org.flywaydb.flyway" version "8.5.12"
+    id "io.freefair.lombok" version "6.5.0.2"
+    id "org.flywaydb.flyway" version "8.5.13"
 }
 
 group = 'com.mrlonis.mythicheroes'
