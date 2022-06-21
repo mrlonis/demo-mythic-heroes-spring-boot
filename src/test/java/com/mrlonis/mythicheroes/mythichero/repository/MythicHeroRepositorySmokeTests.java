@@ -1,21 +1,8 @@
 package com.mrlonis.mythicheroes.mythichero.repository;
 
+import com.mrlonis.mythicheroes.mythichero.MythicHero;
 import com.mrlonis.mythicheroes.mythichero.MythicHeroRepository;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
+import com.mrlonis.mythicheroes.templates.repsoitory.RepositorySmokeTests;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-@SpringBootTest
-@ActiveProfiles("test")
-public class MythicHeroRepositorySmokeTests {
-    @Autowired
-    private MythicHeroRepository mythicHeroRepository;
-
-    @Test
-    public void contextLoads() {
-        assertNotNull(mythicHeroRepository);
-    }
+public class MythicHeroRepositorySmokeTests extends RepositorySmokeTests<MythicHero, MythicHeroRepository> {
 }

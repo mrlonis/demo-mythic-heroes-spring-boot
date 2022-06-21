@@ -25,7 +25,7 @@ jacoco {
     toolVersion = "0.8.8"
 }
 
-def filesToExcludeFromCoverage = [""]
+def filesToExcludeFromCoverage = ["**/com/mrlonis/mythicheroes/config/**", "**/com/mrlonis/mythicheroes/domain/**"]
 
 task restartDocker {
     doLast {
