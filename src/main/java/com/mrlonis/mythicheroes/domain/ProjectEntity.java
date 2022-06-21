@@ -1,4 +1,4 @@
-package com.mrlonis.mythicheroes.entities;
+package com.mrlonis.mythicheroes.domain;
 
 import java.util.UUID;
 

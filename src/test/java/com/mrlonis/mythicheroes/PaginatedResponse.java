@@ -1,4 +1,4 @@
-package com.mrlonis.mythicheroes.controllers;
+package com.mrlonis.mythicheroes;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

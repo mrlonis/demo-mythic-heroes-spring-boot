@@ -1,5 +1,6 @@
-package com.mrlonis.mythicheroes.entities;
+package com.mrlonis.mythicheroes.rarity;
 
+import com.mrlonis.mythicheroes.domain.ProjectEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

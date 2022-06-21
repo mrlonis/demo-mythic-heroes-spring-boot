@@ -1,4 +1,4 @@
-package com.mrlonis.mythicheroes.controllers;
+package com.mrlonis.mythicheroes.mythichero.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

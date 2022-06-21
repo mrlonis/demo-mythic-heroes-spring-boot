@@ -1,6 +1,5 @@
-package com.mrlonis.mythicheroes.repositories;
+package com.mrlonis.mythicheroes.mythichero;
 
-import com.mrlonis.mythicheroes.entities.MythicHero;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;

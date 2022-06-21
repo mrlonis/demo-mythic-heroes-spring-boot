@@ -1,7 +1,5 @@
-package com.mrlonis.mythicheroes.services;
+package com.mrlonis.mythicheroes.mythichero;
 
-import com.mrlonis.mythicheroes.entities.MythicHero;
-import com.mrlonis.mythicheroes.repositories.MythicHeroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

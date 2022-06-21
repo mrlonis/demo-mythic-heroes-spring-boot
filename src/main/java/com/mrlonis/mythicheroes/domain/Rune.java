@@ -1,4 +1,4 @@
-package com.mrlonis.mythicheroes.entities;
+package com.mrlonis.mythicheroes.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,8 +18,8 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "MythicHeroes_Types")
-public class Type implements ProjectEntity, Serializable {
+@Table(name = "MythicHeroes_Runes")
+public class Rune implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = "id")
@@ -28,9 +28,4 @@ public class Type implements ProjectEntity, Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "imageUrl")
-    private String imageUrl;
-
-    @Column(name = "imageSourceUrl")
-    private String imageSourceUrl;
 }

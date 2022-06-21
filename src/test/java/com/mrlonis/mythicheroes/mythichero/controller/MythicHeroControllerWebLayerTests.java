@@ -1,7 +1,8 @@
-package com.mrlonis.mythicheroes.controllers;
+package com.mrlonis.mythicheroes.mythichero.controller;
 
-import com.mrlonis.mythicheroes.entities.MythicHero;
-import com.mrlonis.mythicheroes.services.MythicHeroService;
+import com.mrlonis.mythicheroes.mythichero.MythicHero;
+import com.mrlonis.mythicheroes.mythichero.MythicHeroController;
+import com.mrlonis.mythicheroes.mythichero.MythicHeroService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;

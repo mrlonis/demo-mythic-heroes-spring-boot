@@ -1,9 +1,9 @@
 package com.mrlonis.mythicheroes.config;
 
-import com.mrlonis.mythicheroes.entities.Faction;
-import com.mrlonis.mythicheroes.entities.MythicHero;
-import com.mrlonis.mythicheroes.entities.Rarity;
-import com.mrlonis.mythicheroes.entities.Type;
+import com.mrlonis.mythicheroes.faction.Faction;
+import com.mrlonis.mythicheroes.mythichero.MythicHero;
+import com.mrlonis.mythicheroes.rarity.Rarity;
+import com.mrlonis.mythicheroes.type.Type;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.core.mapping.RepositoryDetectionStrategy;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;

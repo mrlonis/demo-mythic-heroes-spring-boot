@@ -1,6 +1,5 @@
-package com.mrlonis.mythicheroes.repositories;
+package com.mrlonis.mythicheroes.rarity;
 
-import com.mrlonis.mythicheroes.entities.Rarity;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

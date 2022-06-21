@@ -1,4 +1,4 @@
-package com.mrlonis.mythicheroes.entities;
+package com.mrlonis.mythicheroes.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,8 +18,8 @@ import java.util.UUID;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "MythicHeroes_Runes")
-public class Rune implements Serializable {
+@Table(name = "MythicHeroes_Artifacts")
+public class Artifact implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = "id")

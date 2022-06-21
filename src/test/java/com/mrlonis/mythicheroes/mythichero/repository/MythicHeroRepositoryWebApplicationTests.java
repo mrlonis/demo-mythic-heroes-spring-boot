@@ -1,4 +1,4 @@
-package com.mrlonis.mythicheroes.repositories;
+package com.mrlonis.mythicheroes.mythichero.repository;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

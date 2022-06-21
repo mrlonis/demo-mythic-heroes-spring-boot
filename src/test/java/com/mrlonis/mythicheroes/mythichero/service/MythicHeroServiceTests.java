@@ -1,7 +1,8 @@
-package com.mrlonis.mythicheroes.services;
+package com.mrlonis.mythicheroes.mythichero.service;
 
-import com.mrlonis.mythicheroes.entities.MythicHero;
-import com.mrlonis.mythicheroes.repositories.MythicHeroRepository;
+import com.mrlonis.mythicheroes.mythichero.MythicHero;
+import com.mrlonis.mythicheroes.mythichero.MythicHeroRepository;
+import com.mrlonis.mythicheroes.mythichero.MythicHeroService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
