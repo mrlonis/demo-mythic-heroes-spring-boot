@@ -4,7 +4,7 @@ plugins {
     id "java"
     id "idea"
     id "jacoco"
-    id "org.springframework.boot" version "2.7.0"
+    id "org.springframework.boot" version "2.7.1"
     id "io.spring.dependency-management" version "1.0.11.RELEASE"
     id "io.freefair.lombok" version "6.5.0.2"
     id "org.flywaydb.flyway" version "8.5.13"
@@ -102,8 +102,12 @@ check {
 }
 
 bootRun {
-    systemProperties = System.properties as Map<String, ?>
-    dependsOn restartDocker
+    systemProperties = System.properties as Map<String, String>
+    println(systemProperties.toString())
+    if (systemProperties.get("spring.profiles.active") == "local") {
+        dependsOn restartDocker
+    }
+//    dependsOn restartDocker
 }
 
 build {
@@ -124,6 +128,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.h2database:h2'
     implementation 'commons-io:commons-io:2.11.0'
     implementation 'org.apache.ant:ant:1.10.12'
     implementation 'org.flywaydb:flyway-core'
