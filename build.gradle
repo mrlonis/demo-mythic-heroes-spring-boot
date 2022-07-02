@@ -103,11 +103,9 @@ check {
 
 bootRun {
     systemProperties = System.properties as Map<String, String>
-    println(systemProperties.toString())
     if (systemProperties.get("spring.profiles.active") == "local") {
         dependsOn restartDocker
     }
-//    dependsOn restartDocker
 }
 
 build {
